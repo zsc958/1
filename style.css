@@ -1,0 +1,220 @@
+/* 全局样式重置 & 基础配置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Microsoft YaHei", 微软雅黑, sans-serif;
+}
+
+/* 全局图片基础样式（核心：防止图片变形、溢出） */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: none;
+}
+
+/* 清除浮动工具类 */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* 版心：统一页面宽度，居中对齐 */
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* 顶部导航栏样式 */
+.top-nav {
+  height: 40px;
+  background-color: #f5f5f5;
+  line-height: 40px;
+  font-size: 14px;
+  color: #666;
+}
+.top-nav .left {
+  float: left;
+}
+.top-nav .right {
+  float: right;
+}
+.top-nav a {
+  margin: 0 10px;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.top-nav a:hover {
+  color: #ff6700;
+}
+
+/* 头部Logo+搜索区 */
+.header {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo img {
+  height: 60px;
+  width: auto;
+}
+.search-box {
+  width: 420px;
+  height: 42px;
+  border: 2px solid #ff6700;
+  display: flex;
+  border-radius: 2px;
+}
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0 15px;
+  font-size: 14px;
+  color: #333;
+}
+.search-box button {
+  width: 90px;
+  background-color: #ff6700;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+.search-box button:hover {
+  background-color: #e65a00;
+}
+
+/* 主导航菜单 */
+.main-nav {
+  background-color: #ff6700;
+  height: 50px;
+}
+.main-nav ul {
+  list-style: none;
+  display: flex;
+}
+.main-nav li {
+  line-height: 50px;
+}
+.main-nav a {
+  display: block;
+  padding: 0 25px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+.main-nav a:hover,
+.main-nav a.active {
+  background-color: #e65a00;
+}
+
+/* Banner轮播区 */
+.banner {
+  height: 360px;
+  margin: 10px auto;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 核心：保持图片比例，填满容器不变形 */
+}
+
+/* 通用模块标题 */
+.module-title {
+  font-size: 22px;
+  color: #333;
+  margin: 30px 0 15px;
+  border-left: 4px solid #ff6700;
+  padding-left: 10px;
+  line-height: 1;
+}
+.module-title span {
+  font-size: 14px;
+  color: #999;
+  margin-left: 10px;
+  font-weight: normal;
+}
+
+/* 通用商品卡片样式 */
+.goods-card {
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.goods-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.goods-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* 生鲜商品网格布局 */
+.goods-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.goods-grid .goods-card {
+  width: calc(100% / 8 - 15px); /* 8个一排，自动计算宽度，适配gap */
+  height: 140px;
+}
+
+/* 左右布局通用样式（服装/居家/餐厨区） */
+.left-right-layout {
+  display: flex;
+  gap: 15px;
+}
+.left-cover {
+  width: 20%;
+  height: 300px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.left-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.right-grid {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.right-grid .goods-card {
+  width: calc(100% / 4 - 15px); /* 4个一排，适配gap */
+  height: 140px;
+}
+
+/* 热卖推荐网格布局 */
+.hot-grid {
+  display: flex;
+  gap: 15px;
+}
+.hot-grid .goods-card {
+  flex: 1;
+  height: 180px;
+}
+
+/* 页脚样式 */
+.footer {
+  height: 80px;
+  background-color: #f5f5f5;
+  text-align: center;
+  line-height: 80px;
+  font-size: 14px;
+  color: #666;
+  margin-top: 40px;
+}
